@@ -22,5 +22,5 @@ resource "azurerm_virtual_network_peering" "this" {
   allow_forwarded_traffic      = try(each.value.allow_forwarded_traffic, true)
   allow_gateway_transit        = try(each.value.allow_gateway_transit, true)
   use_remote_gateways          = try(each.value.use_remote_gateways, true)
-  triggers                     = try(each.value.triggers, true)
+  #triggers                     = try(each.value.triggers, true)
 }
