@@ -26,4 +26,4 @@ resource "azurerm_virtual_network" "this" {
 #  allow_gateway_transit        = try(each.value.allow_gateway_transit, true)
 #  use_remote_gateways          = try(each.value.use_remote_gateways, true)
 #  #triggers                     = try(each.value.triggers, true)
-}
+#}
