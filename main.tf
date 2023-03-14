@@ -5,7 +5,7 @@ resource "azurerm_virtual_network" "this" {
   address_space       = var.vnet_address_space
   dns_servers         = var.vnet_dns_servers
   bgp_community       = var.bgp_community
-  ddos_protection_plan = {
+  ddos_protection_plan {
     enable = var.enable_ddos_protection_plan
     id     = var.ddos_protection_plan_id
   }
