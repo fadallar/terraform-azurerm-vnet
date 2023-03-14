@@ -5,9 +5,12 @@ resource "azurerm_virtual_network" "this" {
   address_space       = var.vnet_address_space
   dns_servers         = var.vnet_dns_servers
   bgp_community       = var.bgp_community
-  ddos_protection_plan {
-    enable = var.enable_ddos_protection_plan
-    id     = var.ddos_protection_plan_id
+  dynamic "ddos_protection_plan" {
+    for_each = var.enable_ddos_protection_plan ? ["enabled"] : []
+    content {
+      enable = var.enable_ddos_protection_plan
+      id     = var.ddos_protection_plan_id
+    }
   }
   tags = merge(var.default_tags, var.extra_tags)
 }
